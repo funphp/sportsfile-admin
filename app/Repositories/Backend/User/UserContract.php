@@ -52,6 +52,14 @@ interface UserContract {
 
 	/**
 	 * @param $id
+	 * @param $input
+	 * @param $roles
+	 * @return mixed
+	 */
+	public function updateUser($id, $input);
+
+	/**
+	 * @param $id
 	 * @return mixed
 	 */
 	public function destroy($id);

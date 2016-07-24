@@ -137,6 +137,24 @@ class EloquentUserRepository implements UserContract {
 	/**
 	 * @param $id
 	 * @param $input
+	 * @param $roles
+	 * @return bool
+	 * @throws GeneralException
+	 */
+	public function updateUser($id, $input) {
+		$user = $this->findOrThrowException($id);
+
+		if ($user->update($input)) {
+
+			return true;
+		}
+
+		throw new GeneralException('There was a problem updating this user. Please try again.');
+	}
+
+	/**
+	 * @param $id
+	 * @param $input
 	 * @return bool
 	 * @throws GeneralException
 	 */
