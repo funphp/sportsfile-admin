@@ -16,3 +16,6 @@ return view('backend.users', ['grid' => $grid]);
 get('users', 'DashboardController@users')->name('backend.users');
 get('edit-user/{id?}', 'DashboardController@edit_user')->name('backend.edit-user');
 post('update-user', 'DashboardController@update_user')->name('backend.update-user');
+get('brands/{id}', 'BrandController@index')->name('backend.brands');
+post('brands', 'BrandController@save')->name('backend.brand-save');
+get('brand-delete/{user_id}/{id}', 'BrandController@delete')->name('backend.brand-delete');

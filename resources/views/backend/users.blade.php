@@ -31,6 +31,7 @@
             <th>Active</th>
             <th>Expire</th>
             <th>Note</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -49,6 +50,9 @@
                 <td>{!! $user->active !!}</td>
                 <td>{!! $user->date_exp !!}</td>
                 <td>{!! $user->notes !!}</td>
+                <td><a href="/admin/brands/{!! $user->id !!}" class="btn btn-xs btn-success">
+                        <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                    </a></td>
 
             </tr>
         @endforeach
