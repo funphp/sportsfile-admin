@@ -76,7 +76,6 @@ class EloquentAuthenticationRepository implements AuthenticationContract {
 				$this->auth->logout();
 				throw new GeneralException("Your account is not confirmed. Please click the confirmation link in your e-mail, or ".'<a href="'.route('account.confirm.resend', $user_id).'">click here</a>'." to resend the confirmation e-mail.");
 			}
-
 			event(new UserLoggedIn($this->auth->user()));
 			return true;
 		}

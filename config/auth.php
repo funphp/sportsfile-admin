@@ -28,6 +28,7 @@ return [
 	|
 	*/
 
+
 	'model' => 'App\Models\Access\User\User',
 
 	/*

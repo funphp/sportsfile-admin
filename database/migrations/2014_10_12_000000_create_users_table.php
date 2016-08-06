@@ -12,6 +12,17 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
+
+		Schema::table('users_tbl', function (Blueprint $table) {
+			$table->increments('id');
+			$table->text('password')->change();
+			$table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->timestamp('deleted_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+			$table->string('confirmation_code')->nullable();
+			$table->boolean('confirmed')->default(config('access.users.confirm_email') ? false : true);
+			$table->rememberToken()->nullable();
+		});
 		/*Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');

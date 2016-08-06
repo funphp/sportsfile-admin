@@ -69,6 +69,7 @@ class AuthController extends Controller
         // the IP address of the client making these requests into this application.
         $throttles = $this->isUsingThrottlesLoginsTrait();
 
+
         if ($throttles && $this->hasTooManyLoginAttempts($request))
             return $this->sendLockoutResponse($request);
 
